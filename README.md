@@ -21,3 +21,7 @@
 ### 0x06 tk6_scale
 
 讲述了一个选择栏
+
+### 0x07 tk7_checkButton
+
+讲述了一个多选框
