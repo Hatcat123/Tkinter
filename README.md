@@ -17,3 +17,7 @@
 ### 0x05 tk5_radiobutton
 
 讲述了一个radio的选择框
+
+### 0x06 tk6_scale
+
+讲述了一个选择栏
