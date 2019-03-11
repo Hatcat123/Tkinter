@@ -5,8 +5,9 @@ __author__ = 'AJay'
 __mtime__ = '2019/3/11 0011'
 
 """
+import requests
 import tkinter as tk
-
+from tkinter import messagebox
 window = tk.Tk()
 window.title('某某登录注册页面')
 window.geometry('450x300')
@@ -31,7 +32,26 @@ entry_user_password.place(x=160, y=190)
 
 
 def user_login():
-    pass
+    user_email = var_user_email.get()
+    user_pwd = var_user_password.get()
+    json={
+        "user_email":user_email,
+        "user_pwd":user_pwd,
+    }
+    try:
+        req = requests.post(url='http://127.0.0.1:5000/login/',json=json)
+        print(req.json())
+        if req.json().get('stats')==201:
+            pass
+        else:
+            is_sign_up = tk.messagebox.askyesno(title='欢迎',message='你还没有注册，是否进行注册？')
+            if is_sign_up:
+                user_sign_up()
+    except Exception as e:
+        ask = tk.messagebox.askretrycancel(title='网络错误',message='请检查你的网络')
+        if ask:
+            user_login()
+
 
 
 def user_sign_up():
