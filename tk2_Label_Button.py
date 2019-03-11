@@ -8,7 +8,7 @@ __mtime__ = '2019/3/9 0009'
 
 import tkinter
 
-#Example (Hello, World):
+# Example (Hello, World):
 # import tkinter
 # from tkinter.constants import *
 # tk = tkinter.Tk()
@@ -22,33 +22,27 @@ import tkinter
 
 import tkinter
 
-window=tkinter.Tk()
+window = tkinter.Tk()
 window.title('tk_Label_Button')
 window.geometry('200x100')
 
 var = tkinter.StringVar()
-l=tkinter.Label(window,textvariable=var,bg='green',width='15',height='2')
+l = tkinter.Label(window, textvariable=var, bg='green', width='15', height='2')
 l.pack()
 
-on_hit=False
+on_hit = False
+
+
 def hit_me():
     global on_hit
-    if on_hit ==False:
-        on_hit=True
+    if on_hit == False:
+        on_hit = True
         var.set('你点击了我')
     else:
-        on_hit =False
+        on_hit = False
         var.set('')
 
-b=tkinter.Button(window,text='按钮',width=15,height=2,command=hit_me)
+
+b = tkinter.Button(window, text='按钮', width=15, height=2, command=hit_me)
 b.pack()
 window.mainloop()
-
-
-
-
-
-
-
-
-
